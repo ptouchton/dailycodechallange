@@ -1,4 +1,4 @@
-# dailycodechallange
+# dailycodechallenge
 
 A branch is created for every Challenge
 

@@ -1,4 +1,4 @@
-# dailycodechallenge (A branch per challenge)
+# dailycodechallenge (branch per challenge)
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/dailycodechallenge)
 

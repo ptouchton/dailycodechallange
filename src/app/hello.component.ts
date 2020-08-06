@@ -16,21 +16,20 @@ import { Component, Input, OnInit } from "@angular/core";
 export class HelloComponent implements OnInit {
   @Input() name: string;
 
-  arr: Array<number> = [8, 1, 4];
+  
   ngOnInit() {
-    console.log(`array: ${this.arr}`);
-
-    const solve = xs => {
-      if (xs[0] === xs[1] && xs[0] === xs[2]) return Math.floor(xs[0] * 1.05);
-
-      xs.sort();
-      console.log(`x0: ${xs[0]}`);
-      console.log(`x1: ${xs[1]}`);
-      console.log(`x2: ${xs[2]}`);
-      return Math.min(xs[2], xs[1] + xs[0]);
+    
+    const solve = (address: number,n: number) => {
+      
+      console.log(`address: ${address}`);
+      console.log(`number of houses: ${n}`);
+      
+      const res = address % 2;
+      console.log(`result: ${res}`);
+      
     };
 
-    let me = solve(this.arr);
+    let me = solve(3,3);
     console.log(`solve result: ${me}`);
 
   }

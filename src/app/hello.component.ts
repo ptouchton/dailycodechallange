@@ -19,27 +19,12 @@ export class HelloComponent implements OnInit {
   
   ngOnInit() {
     
-    const solve = (input: Array<number>) => {
+    const solve = (arr: Array<number>) => {
       
-      const outArr: Array<object> = [];
-      for (let i = 0; i < input.length; i++){
-        // console.log(`val: ${input[i]}`);
-
-         console.log(`i: ${i}`);
-         let lookUp = input.indexOf(i+1);
-         console.log(`lookup: ${lookUp}`);
-    
-         if (lookUp === -1){
-           
-           outArr.push(
-             {'i': i,
-              'n': (input[i])}
-           )
-
-         } 
-      }
-      return outArr;
-
+    const arr2 = [];
+    arr.forEach((n, i) => (i > 0 && n - 1 !== arr[i-1]) ? arr2.push({i, n}) : false);
+    return arr2;
+ 
     }
 
     let me = solve([1,2,3,4,6,7,8,15,16]);

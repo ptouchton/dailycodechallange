@@ -11,3 +11,6 @@ https://dev.to/thepracticaldev/daily-challenge-276-unwanted-dollar-signs-458j
 
 #277
 https://dev.to/thepracticaldev/daily-challenge-277-over-the-road-ell
+
+#278
+https://dev.to/thepracticaldev/daily-challenge-278-find-all-non-consecutive-numbers-1eal

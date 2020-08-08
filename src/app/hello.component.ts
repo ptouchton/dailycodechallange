@@ -21,7 +21,7 @@ export class HelloComponent implements OnInit {
     
     const solve = (input: Array<number>) => {
       
-   input.map((x,i) => [x, input[i+1], i+1]).filter(([b,f,i]) => b+1 != f && f != undefined).map(([_,n,i])=>({n,i}))
+   return input.map((x,i) => [x, input[i+1], i+1]).filter(([b,f,i]) => b+1 != f && f != undefined).map(([_,n,i])=>({n,i}))
  
     }
 

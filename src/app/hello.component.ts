@@ -19,11 +19,9 @@ export class HelloComponent implements OnInit {
   
   ngOnInit() {
     
-    const solve = (arr: Array<number>) => {
+    const solve = (input: Array<number>) => {
       
-    const arr2 = [];
-    arr.forEach((n, i) => (i > 0 && n - 1 !== arr[i-1]) ? arr2.push({i, n}) : false);
-    return arr2;
+   input.map((x,i) => [x, input[i+1], i+1]).filter(([b,f,i]) => b+1 != f && f != undefined).map(([_,n,i])=>({n,i}))
  
     }
 

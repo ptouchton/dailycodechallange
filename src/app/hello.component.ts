@@ -16,16 +16,36 @@ import { Component, Input, OnInit } from "@angular/core";
 export class HelloComponent implements OnInit {
   @Input() name: string;
 
-  
   ngOnInit() {
-    
-    const solve = (input: Array<number>) => {
-      
-   return input.map((x,i) => [x, input[i+1], i+1]).filter(([b,f,i]) => b+1 != f && f != undefined).map(([_,n,i])=>({n,i}))
- 
-    }
+    const solve = (input: number) => {
 
-    let me = solve([1,2,3,4,6,7,8,15,16]);
+      const hourlyCharge = 30;
+      const remainderCharge = 10;
+
+      //under 10 charge full hour
+      if (input <= 10) {
+        return hourlyCharge;
+      }
+
+      let first = Math.floor(input / 60);
+      console.log(`first: ${first}`);
+
+      let rem = (input % 60) <= 5 ? 0 : input % 60;
+      console.log(`rem: ${rem}`);
+
+      if (rem > 30 ){
+         ++first;
+         rem = 0;
+      }else {
+        rem = remainderCharge;
+      }
+
+      return (first*hourlyCharge) + rem;
+   
+  
+    };
+
+    let me = solve(273);
     console.log(`solve result: ${JSON.stringify(me)}`);
     // {'i': 4, 'n': 6},
     // {'i': 7, 'n': 15}

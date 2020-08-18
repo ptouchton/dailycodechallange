@@ -18,34 +18,24 @@ export class HelloComponent implements OnInit {
 
   ngOnInit() {
     const solve = (input: number) => {
+    
+    //  let byte_array = String.fromCharCode(input);
+    //  let add_num = byte_array[0] - 97 + (byte_array[1] - 97) * 26 + (byte_array[2] - 97) * (26 ** 2)
+    // return 1000 * add_num + int(byte_array[3:6])     
+    //   if (input <= 999) {
+    //      return `aaa${input.toString().padStart(3, '0')}`
+    //   }
 
-      const hourlyCharge = 30;
-      const remainderCharge = 10;
 
-      //under 10 charge full hour
-      if (input <= 10) {
-        return hourlyCharge;
-      }
+      const output = input.toString().padStart(3, '0');
 
-      let first = Math.floor(input / 60);
-      console.log(`first: ${first}`);
 
-      let rem = (input % 60) <= 5 ? 0 : input % 60;
-      console.log(`rem: ${rem}`);
-
-      if (rem > 30 ){
-         ++first;
-         rem = 0;
-      }else {
-        rem = remainderCharge;
-      }
-
-      return (first*hourlyCharge) + rem;
+      return (output);
    
   
     };
 
-    let me = solve(273);
+    let me = solve(998);
     console.log(`solve result: ${JSON.stringify(me)}`);
     // {'i': 4, 'n': 6},
     // {'i': 7, 'n': 15}
